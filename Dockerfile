@@ -2,8 +2,8 @@ FROM gitlab/gitlab-runner:v12.7.1
 RUN apt-get update && apt-get install -y gnupg2
 
 # 安装 Docker
-RUN apt-get -y install apt-transport-https ca-certificates curl software-properties-common && \
-    apt-get update -y && \
+RUN apt-get update -y && \
+    apt-get -y install apt-transport-https ca-certificates curl software-properties-common && \
     apt-get install -y docker-ce
 COPY daemon.json /etc/docker/daemon.json
 
