@@ -1,4 +1,4 @@
-FROM gitlab/gitlab-runner:v11.1.4
+FROM gitlab/gitlab-runner:v12.7.1
 
 # 修改软件源
 RUN echo 'deb http://mirrors.aliyun.com/ubuntu/ xenial main restricted universe multiverse' > /etc/apt/sources.list && \
