@@ -1,12 +1,5 @@
 FROM gitlab/gitlab-runner:v12.7.1
-
-# 修改软件源
-RUN echo 'deb http://mirrors.aliyun.com/ubuntu/ xenial main restricted universe multiverse' > /etc/apt/sources.list && \
-    echo 'deb http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted universe multiverse' >> /etc/apt/sources.list && \
-    echo 'deb http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted universe multiverse' >> /etc/apt/sources.list && \
-    echo 'deb http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse' >> /etc/apt/sources.list && \
-    apt-get update -y && \
-    apt-get clean
+RUN apt-get update && apt-get install -y gnupg2
 
 # 安装 Docker
 RUN apt-get -y install apt-transport-https ca-certificates curl software-properties-common && \
