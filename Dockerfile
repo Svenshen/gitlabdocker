@@ -1,4 +1,4 @@
-FROM gitlab/gitlab-runner:v12.7.2
+FROM gitlab/gitlab-runner:alpine-v12.7.1
 
 RUN apk add --no-cache \
 		ca-certificates \
