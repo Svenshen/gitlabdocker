@@ -17,9 +17,8 @@ ENV DOCKER_VERSION 19.03.6
 # (no SHA file artifacts on download.docker.com yet as of 2017-06-07 though)
 
 RUN set -eux; \
-	\
 # this "case" statement is generated via "update.sh"
-	dockerArch='x86_64' ;; \	
+	dockerArch='x86_64' ; \	
 	if ! wget -O docker.tgz "https://download.docker.com/linux/static/${DOCKER_CHANNEL}/${dockerArch}/docker-${DOCKER_VERSION}.tgz"; then \
 		echo >&2 "error: failed to download 'docker-${DOCKER_VERSION}' from '${DOCKER_CHANNEL}' for '${dockerArch}'"; \
 		exit 1; \
