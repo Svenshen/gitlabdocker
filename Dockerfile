@@ -4,4 +4,4 @@ RUN apk add --no-cache \
 		ca-certificates \
 		openssh-client
 RUN apk update 
-RUN apk add docker-ce
+RUN apk add docker
